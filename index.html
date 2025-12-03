@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index.html</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+  <html lang="uz"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ULUG'BEK — Portfolio</title>
+    <style>
+      :root {
+        --bg: #ffffff;
+        --text: #111111;
+        --accent: #2d8cff;
+      }
+      body.dark {
+        --bg: #0d1117;
+        --text: #e6e6e6;
+        --accent: #2d8cff;
+      }
+  
+      body {
+        background: linear-gradient(120deg, #0d1b2a, #1b263b, #415a77, #1b263b, #0d1b2a);
+        background-size: 400% 400%;
+        animation: bgShift 12s infinite ease-in-out;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        transition: background 0.4s ease, color 0.4s ease;
+        overflow-x: hidden;
+      }
+  
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 40px;
+        position: sticky;
+        top: 0;
+        background: var(--bg);
+        z-index: 999;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      }
+  
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+      }
+  
+      .toggle-btn {
+        padding: 10px 18px;
+        background: var(--accent);
+        color: #fff;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+  
+      /* Hero section */
+      .hero {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 8%;
+      }
+  
+      .hero-text h1 {
+        font-size: 50px;
+        line-height: 1.2;
+        animation: slideLeft 1.5s ease forwards;
+        opacity: 0;
+      }
+      @keyframes slideLeft {
+        from { transform: translateX(-60px); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+      }
+  
+      .hero-text p {
+        font-size: 20px;
+        margin-top: 10px;
+        animation: fadeIn 2.2s ease forwards;
+        opacity: 0;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+  
+      .hero-img img {
+        width: 350px;
+        border-radius: 0;
+        animation: blobShape 6s infinite ease-in-out, borderColor 6s infinite linear;
+        border: 6px solid #2d8cff;
+        clip-path: polygon(60% 0%, 80% 20%, 100% 50%, 80% 80%, 50% 100%, 20% 80%, 0% 50%, 20% 20%);
+      }
+  
+      @keyframes blobShape {
+        0% { clip-path: polygon(60% 0%, 80% 20%, 100% 50%, 80% 80%, 50% 100%, 20% 80%, 0% 50%, 20% 20%); }
+        33% { clip-path: polygon(55% 5%, 90% 25%, 95% 55%, 85% 85%, 45% 95%, 15% 80%, 5% 45%, 25% 15%); }
+        66% { clip-path: polygon(65% 5%, 95% 35%, 100% 60%, 75% 90%, 50% 100%, 10% 85%, 0% 55%, 30% 10%); }
+        100% { clip-path: polygon(60% 0%, 80% 20%, 100% 50%, 80% 80%, 50% 100%, 20% 80%, 0% 50%, 20% 20%); }
+      }
+      @keyframes borderColor {
+        0% { border-color: #2d8cff; }
+        25% { border-color: #ff3b3b; }
+        50% { border-color: #ffae00; }
+        75% { border-color: #27d67c; }
+        100% { border-color: #2d8cff; }
+      }
+  
+      @keyframes floatImg {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-18px); }
+        100% { transform: translateY(0); }
+      }
+  
+      /* Skills */
+      .skills {
+        padding: 80px 8%;
+      }
+  
+      .skills h2 {
+        font-size: 36px;
+        margin-bottom: 20px;
+        position: relative;
+      }
+  
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+      }
+  
+      .skill-card {
+        padding: 20px;
+        background: var(--bg);
+        border: 1px solid #ccc;
+        border-radius: 12px;
+        text-align: center;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+      }
+  
+      .skill-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      }
+  
+      footer {
+        padding: 30px;
+        text-align: center;
+        opacity: 0.7;
+      }
+    @keyframes bgShift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+    .typing {
+        font-size: 32px;
+        font-weight: 700;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 3px solid var(--accent);
+        width: 0;
+        animation: typingAnim 4s steps(20) infinite alternate;
+      }
+  
+      .cursor {
+        animation: blink 0.7s infinite;
+      }
+  
+      @keyframes typingAnim {
+        0% { width: 0; }
+        50% { width: 240px; }
+        100% { width: 0; }
+      }
+  
+      @keyframes blink {
+        0% { opacity: 1; }
+        50% { opacity: 0; }
+        100% { opacity: 1; }
+      }
+  </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">ULUG'BEK| Network Engineer</div>
+      <div class="toggle-btn" onclick="toggleDarkMode()">🌙/☀️</div>
+    </header>
+  
+    <section class="hero">
+      <div class="hero-text">
+        <h1>ULUG'BEK,00</h1>
+        <h2 class="typing">Network Specialist<span class="cursor">|</span></h2>
+        <p>KOICA o‘quv markazida ishlayman — Networking yo‘nalishi bo‘yicha mutaxassis.</p>
+      </div>
+      <div class="hero-img">
+        <img src="a2b5f0d2-43fd-40b0-88c3-9a440943f21c.jpg" alt="Sizning rasmiingiz">
+      </div>
+    </section>
+  
+    <section class="skills">
+      <h2>Ko‘nikmalarim</h2>
+      <div class="skills-grid">
+        <div class="skill-card">Cisco Networking</div>
+        <div class="skill-card">CCNA Fundamentals</div>
+        <div class="skill-card">Routing &amp; Switching</div>
+        <div class="skill-card">HTML / CSS / JavaScript</div>
+        <div class="skill-card">Cybersecurity Basics</div>
+      </div>
+    </section>
+  
+    <footer>
+      <style>
+        .social-icons a {
+          margin: 0 8px;
+          display: inline-block;
+        }
+        .social-icons svg {
+          width: 28px;
+          height: 28px;
+          transition: transform 0.3s, opacity 0.3s;
+        }
+        .social-icons a.telegram svg { /* Telegram brand blue */
+          fill: #0088cc;
+        }
+        .social-icons a.instagram svg { /* Instagram will use SVG gradient (defined inside SVG) */
+        }
+        .social-icons a.facebook svg { /* Facebook brand blue */
+          fill: #1877F2;
+        }
+        .social-icons a:hover svg { transform: translateY(-4px); opacity: 0.95; }
+        .phone-link {
+          font-size: 18px;
+          text-decoration: none;
+          color: var(--text);
+        }
+        .phone-link:hover { color: var(--accent); }
+      </style>
+  
+      <div class="social-icons" style="margin-bottom:15px;">
+        <a class="telegram" href="https://t.me/yourtelegram" target="_blank" title="Telegram">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" preserveAspectRatio="xMidYMid meet"><path d="M120 0C53.73 0 0 53.73 0 120s53.73 120 120 120 120-53.73 120-120S186.27 0 120 0zm55.3 78.6c-1.6 72.1-25.8 128.5-54.7 171.4-8.1 10.1-15.4 10.9-26.4 6.9-19.9-7.3-39.7-14.8-59.3-22.5-6-2.4-7.9-5-5.8-11.3 6-21 12.3-42 18.4-62.9 1.4-4.7 4.4-6.3 9.2-4.4 18.7 7.9 37.4 15.8 56.2 23.6 2.3.9 4.7 1.6 7-0.1 2.9-2 1.9-4.4 1.4-6.9-2.1-12.9-4.2-25.9-6.4-38.8-0.7-4.1-1.7-6.4 2.4-9 16-9.8 31.9-19.6 48-29.4 3.8-2.3 7.2-3.1 10.9 0.1 4.5 3.8 3.2 8.8 2.9 13.8z" fill="#0088cc"></path></svg>
+        </a>
+  
+        <a class="instagram" href="https://instagram.com/yourinstagram" target="_blank" title="Instagram">
+          <!-- Instagram glyph with gradient -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 169.063 169.063" preserveAspectRatio="xMidYMid meet">
+            <defs>
+              <linearGradient id="igGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#f58529"></stop>
+                <stop offset="50%" stop-color="#dd2a7b"></stop>
+                <stop offset="100%" stop-color="#8134af"></stop>
+              </linearGradient>
+            </defs>
+            <path d="M122.406 0H46.656C20.899 0 0 20.899 0 46.657v75.75c0 25.757 20.899 46.656 46.656 46.656h75.75c25.758 0 46.657-20.899 46.657-46.656V46.657C169.063 20.899 148.164 0 122.406 0zm-1.7 51.9c-1.2-8.8-6.2-13.8-15-15-8.6-1.2-34.4-1.2-43 0-8.8 1.2-13.8 6.2-15 15-1.2 8.6-1.2 34.4 0 43 1.2 8.8 6.2 13.8 15 15 8.6 1.2 34.4 1.2 43 0 8.8-1.2 13.8-6.2 15-15 1.2-8.6 1.2-34.4 0-43z" fill="url(#igGrad)"></path>
+          </svg>
+        </a>
+  
+        <a class="facebook" href="https://facebook.com/yourfacebook" target="_blank" title="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 12a10 10 0 10-11.5 9.9v-7H8v-3h2.5V9.5c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.8-1.6 1.6V12H18l-.5 3h-2.6v7A10 10 0 0022 12z" fill="#1877F2"></path></svg>
+        </a>
+      </div>
+  
+      <div style="margin-bottom:10px; font-size:18px;">
+        <a class="phone-link" href="tel:+998900000000">📞 +998 90 000 00 00</a>
+      </div>
+      <div style="margin-top:10px;">© 2025 ULUG'BEK — Portfolio</div>
+    </footer>
+  
+    <script>
+      function toggleDarkMode() {
+        document.body.classList.toggle('dark');
+      }
+    </script>
+  
+  
+  
+  
+  </body></html>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
